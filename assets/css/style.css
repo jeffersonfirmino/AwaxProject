@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+}
+
+/* a borda é achatada para que tudo fique do tamanho
+especificado conteudo + margins + paddings + bordas
+caso não especificado  aborda e conteúdos extrapolam
+as divs */
+
+header{ 
+    height: 100px;
+    background-color: #000;
+}
+/* O HEADER PEGA DE PONTA A PONTA MAS O CONTEÚDO É DE 1140PX */
+/* ajusta de acordo com o espaçamento disponível */
+
+.header{
+    max-width: 1140px;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+   
+    
+}
+
+/* se colocar flex 1 ele pega todo o espaço restante
+se tiver outro no grupo flex1 ele encaixa todos
+de forma a terem o mesmo tamanho
+Se colocar no flex 2 vai pegar o dobro do tamanho
+e assim sucessivamente*/
+
+.logo{
+    width: 100px;
+}
+
+.logoimg{
+    background-color: #b28756;
+    height: 80px;
+    width: 80px;
+    border-radius: 40px; /* metade da largura do width */
+}
+.menu{
+    flex:1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu li,
+.menu ul{
+    list-style: none; /* remove os discos da lista */
+}
+
+.menu ul {
+    display: flex;
+}
+
+/* as propriedades do flex sempre vão na div container
+a posição vertical align-items e a horizontal justify*/
+
+/* padding: superior direita baixo esquerda
+em sentido horário */
+
+.menu li a {
+    color: #fff;
+    text-decoration: none; /* nao aparecer a linha abaixo do nome */
+    padding: 0px 10px 0px 10px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    border-bottom: 5px solid #000;
+    text-transform: uppercase;
+    font-weight: 600; /* font weight bold é 600 */
+
+}
+/* colocar uma borda invisivel prende o conteudo
+de forma que quando houver uma interação com o mouse
+o que só aplica a borda naquele momento e aquele
+determinado item já vai ter uma borda que posiciona
+todos os elementos daquele determinado modo 
+(trancando o conteúdo)*/
+
+.menu li a:hover,
+.menu .active a {
+    border-bottom: 5px solid #b28756;
+    color:gray;
+}
+
+/* section com o banner */
+
+.banner{
+    background-color: red;
+    height: calc(100vh - 100px); /* tamanho total do monitor vertical */
+    background-color: #333;
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position:bottom; /* prioriza a parte inferior da imagem */
+}
+
+
+/* o a por padrão tem o display inline */
+/* cover ajusta de forma que a imagem preencha todo o espaço disponível */
+
+.banner .sliders{
+    width:1000vw; /* tamanho de 10 telas se uma completa é 100 viewport width*/
+    height: 100%; /* tamanho da área disponível */
+}
+.banner .slide{
+    width:100vw; /* tamanho de 1 tela se uma completa é 100 viewport width*/
+    height: 100%; /* tamanho da área disponível */
+    display: inline-block; /*fica tudo em linha um ao lado do outro */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+
+
+}
+/* no caso vão ficar os 3 slidesshows com essaspropriedades */
+
+/* fica exatamente do tamanho de 3 telas inteiras disponíveis podendo chegar até o 10 */
+
+.banner .slidearea{
+    display: flex;
+    height: 100%; /* seria 100% do vw disponível do .slide que é uma tela inteira */
+    flex-direction: column;
+    justify-content: center; /* jcc */
+    align-items: center; /* ali */
+}
+
+.banner h1{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 50px;
+}
+.banner h1 span{
+    color: #b28756; /* apenas modificando a cor do seletor */
+}
+.banner h2{
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.banner a{
+    display: block;
+    background-color: #b28756;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 10px 30px; /* quando está só com 2 parâmetros define superior e lateral */
+    font-weight: bold;
+    margin: 20px;
+    border-radius: 20px;
+
+}
+
+
+
+
+
